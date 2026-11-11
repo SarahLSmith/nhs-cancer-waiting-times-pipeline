@@ -1,0 +1,59 @@
+# Sources for the NHS England Cancer Waiting Times pipeline.
+#
+# Every file listed here is a *cumulative* combined CSV published on the NHS England
+# CWT statistics page:
+#   https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/
+#
+# status:
+#   final       - NHS England has finalised these months (most correct figures)
+#   provisional - first publication; can still be revised
+#
+# To add a newer month later (e.g. Apr-Sep 2026), add a new entry with its link.
+# The pipeline loads only files it has not seen before (checked by SHA-256).
+
+sources:
+  - id: cwt_2022_23_final
+    label: "2022-23 Apr - Mar Monthly Combined CSV Final"
+    url: "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/02/2022-23-Apr-Mar-Monthly-Combined-CSV-Final.csv"
+    status: final
+    first_period: 2022-04-01
+    last_period: 2023-03-01
+
+  - id: cwt_2023_24_final
+    label: "2023-24 Apr - Mar Monthly Combined CSV Final"
+    url: "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/02/2023-24-Apr-Mar-Monthly-Combined-CSV-Final.csv"
+    status: final
+    first_period: 2023-04-01
+    last_period: 2024-03-01
+
+  - id: cwt_2024_25_final
+    label: "2024-25 Apr - Mar Monthly Combined CSV Final"
+    url: "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/02/2024-25-Apr-Mar-Monthly-Combined-CSV-Final.csv"
+    status: final
+    first_period: 2024-04-01
+    last_period: 2025-03-01
+
+  - id: cwt_2025_26_final
+    label: "2025-26 Apr - Mar Cumulative Monthly Combined CSV Final"
+    url: "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/10/2025-26-Apr-Mar-Cumulative-Monthly-Combined-CSV-Final.csv"
+    status: final
+    first_period: 2025-04-01
+    last_period: 2026-03-01
+
+  - id: cwt_2026_27_apr_aug_provisional
+    label: "2026-27 Apr - Aug Cumulative Monthly Combined CSV Provisional"
+    url: "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/10/2026-27-Apr-Aug-Cumulative-Monthly-Combined-CSV-Provisional.csv"
+    status: provisional
+    first_period: 2026-04-01
+    last_period: 2026-08-01
+
+# Reference data we maintain ourselves (built from the ODS ICB mergers change summary).
+reference:
+  icb_mapping: reference/icb_mapping_2026.csv
+
+# Local storage locations (relative to the project root).
+storage:
+  landing_dir: landing
+  warehouse: warehouse/cwt.duckdb
+  outputs_dir: outputs
+  dbt_project_dir: dbt

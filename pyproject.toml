@@ -1,0 +1,23 @@
+[project]
+name = "nhs-cancer-waiting-times-pipeline"
+version = "0.1.0"
+description = "Repeatable pipeline for NHS England Cancer Waiting Times data, including the April 2026 ICB restructure."
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.1",
+    "dbt-core>=1.8",
+    "dbt-duckdb>=1.8",
+    "pyyaml>=6.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "black>=24.0"]
+dashboard = ["streamlit>=1.36", "pandas>=2.2"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
