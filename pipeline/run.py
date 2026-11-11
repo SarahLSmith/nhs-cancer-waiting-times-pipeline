@@ -112,7 +112,7 @@ def publish(settings: Settings, con: duckdb.DuckDBPyConnection) -> Path:
         f"SELECT {', '.join(SUMMARY_COLUMNS)} FROM reports_icb_summary "
         "ORDER BY period_start, icb_code, standard"
     ).fetchall()
-    summary_path = settings.outputs_dir / "summary_icb_last_4_months.csv"
+    summary_path = settings.outputs_dir / "summary_icb_last_6_months.csv"
     with summary_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
         writer.writerow(SUMMARY_COLUMNS)

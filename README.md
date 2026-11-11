@@ -6,7 +6,7 @@ It is built as a portfolio project, using an agentic AI workflow (see `docs/agen
 
 ## What you get
 
-- **`outputs/summary_icb_last_4_months.csv`**: the four most recent months, by ICB, for each of the three headline waiting-time standards.
+- **`outputs/summary_icb_last_6_months.csv`**: the six most recent months, by ICB, for each of the three headline waiting-time standards.
 - **`outputs/data_status.json`**: when the data was last downloaded, the newest month, and how many months are still provisional.
 - **Quality checks** that stop the run before a bad load reaches the summary.
 

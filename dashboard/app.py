@@ -16,7 +16,7 @@ import pandas as pd
 import streamlit as st
 
 OUTPUTS = Path(__file__).resolve().parent.parent / "outputs"
-SUMMARY = OUTPUTS / "summary_icb_last_4_months.csv"
+SUMMARY = OUTPUTS / "summary_icb_last_6_months.csv"
 STATUS = OUTPUTS / "data_status.json"
 
 STANDARD_NAMES = {
@@ -69,7 +69,7 @@ def main() -> None:
     )
     st.bar_chart(month.set_index("icb_name")["performance_pct"], horizontal=True)
 
-    st.subheader("Trend over the last four months")
+    st.subheader("Trend over the last six months")
     pivot = subset.pivot_table(
         index="icb_name",
         columns="period_start",

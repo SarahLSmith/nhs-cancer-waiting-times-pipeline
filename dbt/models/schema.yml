@@ -46,4 +46,4 @@ models:
                 values: ['62D', '31D', 'FDS']
 
   - name: reports_icb_summary
-    description: "The last four months of reports_icb_monthly, for the panel."
+    description: "The last six months of reports_icb_monthly, for the panel."

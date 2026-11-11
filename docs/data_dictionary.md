@@ -81,7 +81,7 @@ Adds:
 | `includes_provisional` | True if the month is provisional (NHS may still revise it). |
 | `after_icb_restructure` | True from April 2026. |
 
-`reports_icb_summary` holds the four most recent months of `reports_icb_monthly`.
+`reports_icb_summary` holds the six most recent months of `reports_icb_monthly`.
 
 ## `load_log`
 
