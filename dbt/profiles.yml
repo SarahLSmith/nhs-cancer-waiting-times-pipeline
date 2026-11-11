@@ -1,0 +1,13 @@
+# dbt connection settings.
+#
+# The database file location comes from the CWT_WAREHOUSE environment variable,
+# which the pipeline sets for you. To move to a cloud warehouse later, add a new
+# target here (for example "prod" with type snowflake or databricks) and select it
+# with --target. The models do not need to change.
+cwt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('CWT_WAREHOUSE') }}"
+      threads: 1

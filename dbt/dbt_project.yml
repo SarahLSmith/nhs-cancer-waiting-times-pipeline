@@ -1,0 +1,26 @@
+# dbt project for the Cancer Waiting Times pipeline.
+#
+# Layers (see README glossary):
+#   clean    - tidy, typed, one current row per key            (incremental)
+#   linked   - clean rows joined to the ICB mapping            (table)
+#   reports  - tables people read                              (table)
+name: cwt
+version: "1.0.0"
+config-version: 2
+
+profile: cwt
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["../reference"]   # the ICB mapping lives in reference/, shared with the Python code
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  cwt:
+    clean:
+      +materialized: incremental
+    linked:
+      +materialized: table
+    reports:
+      +materialized: table

@@ -1,0 +1,10 @@
+version: 2
+
+# Tables written by the Python ingest step (pipeline/ingest.py), not by dbt.
+sources:
+  - name: landing
+    description: "Raw NHS CSV rows, all text, plus load metadata. Written by pipeline/ingest.py."
+    schema: main
+    tables:
+      - name: landing_cwt
+        description: "One row per NHS CSV row across every archived file."

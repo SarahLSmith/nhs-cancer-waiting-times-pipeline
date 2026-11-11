@@ -1,0 +1,49 @@
+version: 2
+
+# dbt's own tests. The Python checks in pipeline/checks.py cover the rest
+# (duplicates, reconciliation, months present and plausible values).
+
+models:
+  - name: clean_cwt
+    description: "One current, tidy row per month, organisation and measure."
+    columns:
+      - name: period_start
+        data_tests:
+          - not_null
+      - name: basis
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['PROVIDER', 'COMMISSIONER']
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['final', 'provisional']
+
+  - name: linked_cwt
+    description: "clean_cwt with the April 2026 ICB mapping applied."
+    columns:
+      - name: icb_code
+        data_tests:
+          - not_null:
+              config:
+                where: "basis = 'COMMISSIONER'"
+
+  - name: reports_icb_monthly
+    description: "Headline measures by ICB and month. Performance recalculated from counts."
+    columns:
+      - name: period_start
+        data_tests:
+          - not_null
+      - name: icb_code
+        data_tests:
+          - not_null
+      - name: standard
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['62D', '31D', 'FDS']
+
+  - name: reports_icb_summary
+    description: "The last six months of reports_icb_monthly, for the panel."

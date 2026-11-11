@@ -1,0 +1,14 @@
+old_org_code,old_org_name,new_org_code,new_org_name,treatment,source_reference
+QHG,NHS Bedfordshire Luton and Milton Keynes ICB,S1Y5D,NHS Central East Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 56-58
+QUE,NHS Cambridgeshire and Peterborough ICB,S1Y5D,NHS Central East Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 56-58
+QM7,NHS Hertfordshire and West Essex ICB,S1Y5D,NHS Central East Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 56-58
+QH8,NHS Mid and South Essex ICB,D7T5G,NHS Essex Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 59-60
+QJG,NHS Suffolk and North East Essex ICB,T6Y0W,NHS Norfolk and Suffolk Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 61-62
+QMM,NHS Norfolk and Waveney ICB,T6Y0W,NHS Norfolk and Suffolk Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 62-63
+QMJ,NHS North Central London ICB,Z9B2Z,NHS West and North London Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 64-65
+QRV,NHS North West London ICB,Z9B2Z,NHS West and North London Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 64-65
+QU9,NHS Buckinghamshire Oxfordshire and Berkshire West ICB,S0E4D,NHS Thames Valley Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab row 66
+QXU,NHS Surrey Heartlands ICB,S9B9J,NHS Surrey and Sussex Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 68-69
+QNX,NHS Sussex ICB,S9B9J,NHS Surrey and Sussex Integrated Care Board,merged,ODS ICB Mergers Apr 2026 - Summary tab rows 68-70
+QNQ,NHS Frimley ICB,,,excluded,"Split three ways (Thames Valley, Surrey and Sussex, Hampshire and Isle of Wight). Excluded from ICB tables; kept in national totals. ODS Summary tab row 67"
+QRL,NHS Hampshire and Isle of Wight ICB,QRL,NHS Hampshire and Isle of Wight Integrated Care Board,boundary_change,"Keeps its code; boundary extended to take part of Frimley. ODS Summary tab row 71. History before Apr 2026 covers a smaller area"
